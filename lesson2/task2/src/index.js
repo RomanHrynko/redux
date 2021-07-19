@@ -1,4 +1,3 @@
-import { valueToNode } from '@babel/types';
 import './index.scss';
 import store, { increment, decrement, reset } from './store.js';
 
@@ -26,7 +25,7 @@ resetBtn.addEventListener('click', onReset);
 store.subscribe(() => {
   const state = store.getState();
   const currentValue = state.history.reduce((acc, val) => acc + val, 0);
-  const historyString = state.history.map(el => (el === 1 ? `+${el}` : el)).join(' ');
+  const historyString = state.history.map(el => (el === 1 ? `+${el}` : el)).join('');
 
   resultElem.textContent = state.history.length === 0 ? '' : `${historyString} = ${currentValue}`;
 });

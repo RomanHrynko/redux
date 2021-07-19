@@ -5,11 +5,13 @@ import cartReducer from './cart.reducer.js';
 
 const appReducer = combineReducers({
   language: languageReducer,
-  cart: cartReducer,
   user: userReducer,
+  cart: cartReducer,
 });
 
-export const store = createStore(
+const store = createStore(
   appReducer,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
 );
+
+export default store;

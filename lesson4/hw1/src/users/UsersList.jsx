@@ -1,8 +1,8 @@
 import React from 'react';
-import Pagination from './Pagination.jsx';
-import User from './User.jsx';
 import { connect } from 'react-redux';
 import * as userActions from './users.actions';
+import Pagination from './Pagination.jsx';
+import User from './User.jsx';
 
 class UsersList extends React.Component {
   goPrev = () => {
@@ -18,7 +18,7 @@ class UsersList extends React.Component {
     const usersPerPage = 3;
 
     const start = users.currentPage * usersPerPage;
-    const usersToDiplay = users.usersList.slice(start, start + usersPerPage);
+    const usersToDisplay = users.usersList.slice(start, start + usersPerPage);
 
     return (
       <div>
@@ -30,7 +30,7 @@ class UsersList extends React.Component {
           itemsPerPage={usersPerPage}
         />
         <ul className="users">
-          {usersToDiplay.map(user => (
+          {usersToDisplay.map(user => (
             <User key={user.id} {...user} />
           ))}
         </ul>
@@ -55,6 +55,6 @@ const mapDispatch = {
 
 const connector = connect(mapState, mapDispatch);
 
-const ConnectedUsersList = connector(UsersList);
+const connectedUsersList = connector(UsersList);
 
-export default ConnectedUsersList;
+export default connectedUsersList;

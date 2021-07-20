@@ -2,7 +2,7 @@ import React from 'react';
 import Pagination from './Pagination.jsx';
 import User from './User.jsx';
 import { connect } from 'react-redux';
-import * as userActions from './users.actions.js';
+import * as userActions from './users.actions';
 
 class UsersList extends React.Component {
   goPrev = () => {
@@ -55,6 +55,6 @@ const mapDispatch = {
 
 const connector = connect(mapState, mapDispatch);
 
-const connectedUsersList = connector(UsersList);
+const ConnectedUsersList = connector(UsersList);
 
-export default connectedUsersList;
+export default ConnectedUsersList;

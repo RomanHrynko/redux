@@ -1,4 +1,4 @@
-import { NEXT_PAGE, PREV_PAGE } from './users.actions.js';
+import { NEXT_PAGE, PREV_PAGE } from './users.actions';
 
 const initialState = {
   usersList: [

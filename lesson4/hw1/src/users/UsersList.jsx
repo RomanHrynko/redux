@@ -15,10 +15,10 @@ class UsersList extends React.Component {
 
   render() {
     const { users } = this.props;
-    const itemsPerPage = 3;
+    const usersPerPage = 3;
 
-    const startPage = users.currentPage * itemsPerPage;
-    const countUsersOnPage = users.usersList.slice(startPage, startPage + itemsPerPage);
+    const start = users.currentPage * usersPerPage;
+    const usersToDiplay = users.usersList.slice(start, start + usersPerPage);
 
     return (
       <div>
@@ -27,10 +27,10 @@ class UsersList extends React.Component {
           goNext={this.goNext}
           currentPage={users.currentPage}
           totalItems={users.usersList.length}
-          itemsPerPage={itemsPerPage}
+          itemsPerPage={usersPerPage}
         />
         <ul className="users">
-          {countUsersOnPage.map(user => (
+          {usersToDiplay.map(user => (
             <User key={user.id} {...user} />
           ))}
         </ul>
@@ -49,12 +49,12 @@ const mapState = state => {
 };
 
 const mapDispatch = {
-  prevPage: userActions.prevPage,
   nextPage: userActions.nextPage,
+  prevPage: userActions.prevPage,
 };
 
 const connector = connect(mapState, mapDispatch);
 
-const сonnectedUsersList = connector(UsersList);
+const connectedUsersList = connector(UsersList);
 
-export default сonnectedUsersList;
+export default connectedUsersList;

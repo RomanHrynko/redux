@@ -9,7 +9,7 @@ const Pagination = ({ goPrev, goNext, currentPage, totalItems, itemsPerPage }) =
       <button className="btn" onClick={goPrev} disabled={!isPrevPageAvailable}>
         {isPrevPageAvailable && '←'}
       </button>
-      <span className="pagination__page">{currentPage}</span>
+      <span className="pagination__page">{currentPage + 1}</span>
       <button className="btn" onClick={goNext} disabled={!isNextPageAvailable}>
         {isNextPageAvailable && '→'}
       </button>

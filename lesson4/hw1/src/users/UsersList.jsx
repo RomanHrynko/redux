@@ -17,7 +17,7 @@ class UsersList extends React.Component {
     const { users } = this.props;
     const itemsPerPage = 3;
 
-    const startPage = (users.currentPage - 1) * itemsPerPage;
+    const startPage = users.currentPage * itemsPerPage;
     const countUsersOnPage = users.usersList.slice(startPage, startPage + itemsPerPage);
 
     return (

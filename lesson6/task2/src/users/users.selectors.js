@@ -3,5 +3,5 @@ export const isFetchingSelector = state => {
 };
 
 export const userDataSelector = state => {
-  return state.users.isFetching;
+  return state.users.userData;
 };

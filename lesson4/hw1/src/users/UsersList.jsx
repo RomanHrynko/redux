@@ -55,6 +55,6 @@ const mapDispatch = {
 
 const connector = connect(mapState, mapDispatch);
 
-const ConnectedUsersList = connector(UsersList);
+const сonnectedUsersList = connector(UsersList);
 
-export default ConnectedUsersList;
+export default сonnectedUsersList;
